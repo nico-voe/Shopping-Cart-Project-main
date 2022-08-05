@@ -18,6 +18,7 @@ const cherrys = {
   productId: 1,
   image: '../images/cherry.jpg'
 }
+
 const strawberrys = {
   name: strawberrys,
   price: 20,
@@ -25,6 +26,7 @@ const strawberrys = {
   productId: 2,
   image: '../images/strawberry.jpg'
 }
+
 const oranges = {
   name: oranges,
   price: 30,
@@ -58,11 +60,20 @@ function addProductToCart(productId) {
   - increaseQuantity should then increase the product's quantity
 */
 
+
+function increaseQuantity(productId) {
+
+}
+
 /* Create a function named decreaseQuantity that takes in the productId as an argument
   - decreaseQuantity should get the correct product based on the productId
   - decreaseQuantity should decrease the quantity of the product
   - if the function decreases the quantity to 0, the product is removed from the cart
 */
+
+function decreaseQuantity(productId) {
+
+}
 
 /* Create a function named removeProductFromCart that takes in the productId as an argument
   - removeProductFromCart should get the correct product based on the productId
@@ -70,17 +81,31 @@ function addProductToCart(productId) {
   - removeProductFromCart should remove the product from the cart
 */
 
+function removeProductFromCart(productId) {
+
+}
+
 /* Create a function named cartTotal that has no parameters
   - cartTotal should iterate through the cart to get the total of all products
   - cartTotal should return the sum of the products in the cart
 */
 
+function cartTotal() {
+
+}
+
 /* Create a function called emptyCart that empties the products from the cart */
+
+function emptyCart() { }
+
 
 /* Create a function named pay that takes in an amount as an argument
   - pay will return a negative number if there is a remaining balance
   - pay will return a positive number if money should be returned to customer
 */
+
+function pay() { }
+
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
