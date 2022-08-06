@@ -16,7 +16,7 @@ const cherry = {
   price: 10,
   quantity: 0,
   productId: 1,
-  image: '../images/cherry.jpg'
+  image: './images/cherry.jpg'
 }
 
 const strawberry = {
@@ -24,7 +24,7 @@ const strawberry = {
   price: 20,
   quantity: 0,
   productId: 2,
-  image: '../images/strawberry.jpg'
+  image: './images/strawberry.jpg'
 }
 
 const orange = {
@@ -32,7 +32,7 @@ const orange = {
   price: 30,
   quantity: 0,
   productId: 3,
-  image: '../images/orange.jpg'
+  image: './images/orange.jpg'
 }
 
 products.push(cherry, strawberry, orange)
