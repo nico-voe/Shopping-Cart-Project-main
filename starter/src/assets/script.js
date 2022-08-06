@@ -101,12 +101,12 @@ function decreaseQuantity(productId) {
 */
 
 function removeProductFromCart(productId) {
-  cartforEach(function (element, index, array) {
-    if (element.productid === productid) {
-      cart.splice(index, 1);
+  cart.forEach((product, index) => {
+    if (product.productId === productId) {
+      cart.splice(index, 1)
+      product.quantity = 0
     }
-  }
-  )
+  });
 }
 
 /* Create a function named cartTotal that has no parameters
