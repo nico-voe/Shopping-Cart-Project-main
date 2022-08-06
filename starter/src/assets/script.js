@@ -37,7 +37,6 @@ const orange = {
 
 products.push(cherry, strawberry, orange)
 
-console.log("- products", products);
 
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
@@ -56,12 +55,15 @@ const cart = []
 */
 
 function addProductToCart(productId) {
-  const product = products.find(product => product.productId === productId)
-  console.log(product);
-  product.quantity = 1;
-  cart.push(product)
-  console.log(cart)
+  const product = products.find(product => productId === product.productId)
 
+  if (!product) {
+    return
+  }
+  if (product.quantity === 0) {
+    cart.push(product)
+  }
+  increaseQuantity(productId)
 }
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
