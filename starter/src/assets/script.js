@@ -11,29 +11,33 @@ const products = [];
    - image: picture of product (url string)
 */
 
-const cherrys = {
-  name: 'cherrys',
+const cherry = {
+  name: 'Cherry',
   price: 10,
   quantity: 0,
   productId: 1,
   image: '../images/cherry.jpg'
 }
 
-const strawberrys = {
-  name: strawberrys,
+const strawberry = {
+  name: 'Strawberry',
   price: 20,
   quantity: 0,
   productId: 2,
   image: '../images/strawberry.jpg'
 }
 
-const oranges = {
-  name: oranges,
+const orange = {
+  name: 'Orange',
   price: 30,
   quantity: 0,
   productId: 3,
   image: '../images/orange.jpg'
 }
+
+products.push(cherry, strawberry, orange)
+
+console.log("- products", products);
 
 /* Images provided in /images folder. All images from Unsplash.com
    - cherry.jpg by Mae Mu
@@ -52,6 +56,11 @@ const cart = []
 */
 
 function addProductToCart(productId) {
+  const product = products.find(product => product.productId === productId)
+  console.log(product);
+  product.quantity = 1;
+  cart.push(product)
+  console.log(cart)
 
 }
 
@@ -60,9 +69,12 @@ function addProductToCart(productId) {
   - increaseQuantity should then increase the product's quantity
 */
 
-
 function increaseQuantity(productId) {
-
+  cart.forEach(product => {
+    if (productId === product.productId) {
+      return product.quantity++
+    }
+  });
 }
 
 /* Create a function named decreaseQuantity that takes in the productId as an argument
@@ -72,7 +84,14 @@ function increaseQuantity(productId) {
 */
 
 function decreaseQuantity(productId) {
-
+  cart.forEach((product, index) => {
+    if (productId === product.productId) {
+      if (product.quantity === 1) {
+        cart.splice(index, 1)
+      }
+      product.quantity--
+    }
+  });
 }
 
 /* Create a function named removeProductFromCart that takes in the productId as an argument
@@ -82,7 +101,12 @@ function decreaseQuantity(productId) {
 */
 
 function removeProductFromCart(productId) {
-
+  cartforEach(function (element, index, array) {
+    if (element.productid === productid) {
+      cart.splice(index, 1);
+    }
+  }
+  )
 }
 
 /* Create a function named cartTotal that has no parameters
@@ -90,13 +114,26 @@ function removeProductFromCart(productId) {
   - cartTotal should return the sum of the products in the cart
 */
 
-function cartTotal() {
+function cartTotal() { }
 
+function cartTotal() {
+  let total = 0;
+  cart.forEach(product => {
+    sum += product.price * product.quantity
+  }
+  )
+  return total
 }
 
 /* Create a function called emptyCart that empties the products from the cart */
 
-function emptyCart() { }
+function emptyCart() {
+  cart.forEach(product => {
+    product.quantity = 0;
+  }
+  );
+  cart.splice(0, cart.length)
+}
 
 
 /* Create a function named pay that takes in an amount as an argument
@@ -104,7 +141,12 @@ function emptyCart() { }
   - pay will return a positive number if money should be returned to customer
 */
 
-function pay() { }
+let totalPaid = 0;
+
+function pay(amount) {
+  totalPaid += amount;
+  return totalPaid - cartTotal();
+};
 
 
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
